@@ -7,7 +7,7 @@ admin access no default budget access --> Can access billing info on checkmark
 budget can be used to sent alert when overspent
 
 ## EC2 basics
-EC2 popular offering: Elastic compute cloud - infra as a service
+EC2 popular offering: Elastic compute cloud - which is basically infra as a service (IAAS)
 - VM's
 - Store data - EBS
 - load control - ELB
@@ -15,32 +15,34 @@ EC2 popular offering: Elastic compute cloud - infra as a service
 
 OS options: Linux, MacOS, windows
 
-CPU, RAM, storage, network, security grouo, EC2 user data
+When setting up VM's there are options to pick from:
+CPU, RAM, storage, network, security group, EC2 user data
 
 ### EC2 user data
-it's possible to bootscrap instances using EC2 user data script 
+it's possible to bootstrap instances using EC2 user data script 
 bootstrapping means launching commands when a machine starts 
-automate boot tasks (install updates, software, downloading files)
+automate boot tasks (install updates, software, downloading files, start webservers etc)
 
 bootstrap runs on root user
-Amazon Linux as OS 
+Amazon Linux as OS is better integrated with AWS
 security group - allows control to and from instances (basically the firewall)
 volumes can be deleted on deletion of the EC2 instances
 
 Userdata is on the instances options 
 private ip-adress of the machine is on the AWS cloud, public on the internet
 
-stop and start instance: will change the public ip-address (so its not allocated)
+stop and start instance: will change the public ip-address (so its not allocated) this means if you want a stable one you need to keep it running or pay for it
 
 ### EC2 instacne types basics
 Different instance types have different use cases:
 general, compute optimizes, memory optimized, accelerated optimized
 
+Naming convention looks like this:
 m5.2xlarge
 
-m: instance class memory 
-5: generation (AWS imrpoves over time)
-2xlarge: size within instance class
+m: instance class (memory in this case) 
+5: generation (AWS improves over time so the numbers will increase)
+2xlarge: size within instance class (related to CPU en memory)
 
 general: web servers, code repo's. They are balanced
     e.g. T4g, T2
